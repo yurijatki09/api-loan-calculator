@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  application:
+    name: loan-calculator
+
+loan:
+  config:
+    days-base: 360
+    scale: 2
+
+logging:
+  level:
+    org.springdoc: DEBUG
