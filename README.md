@@ -22,4 +22,29 @@ Siga os passos abaixo para rodar a API na sua máquina:
 
 1. Clone o repositório:
    ```bash
-   git clone <URL_DO_REPOSITORIO>
+   git clone https://github.com/yurijatki09/api-loan-calculator.git
+
+2. Entre na pasta do projeto
+  cd api-loan-calculator/loan-calculator
+
+3. Rode a aplicação usando Maven:
+   ./mvnw spring-boot:run
+   
+4. Abra a documentação interativa da API no navegador:
+   http://localhost:8080/swagger-ui/index.html
+
+## Endpoints Principais
+| Método | Endpoint    | Descrição                  |
+| ------ | ----------- | -------------------------- |
+| GET    | /loans      | Lista todos os empréstimos |
+| POST   | /loans      | Cria um novo empréstimo    |
+| GET    | /loans/{id} | Busca empréstimo por ID    |
+Para a documentação completa, utilize o Swagger UI: http://localhost:8080/swagger-ui/index.html
+
+## Estrutura de Cálculo
+
+Utiliza BigDecimal para precisão financeira
+
+Base de dias definida via application.yml (ex.: 360 dias)
+
+Calcula juros diários entre datas usando ChronoUnit.DAYS
