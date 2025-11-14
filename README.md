@@ -36,9 +36,7 @@ Siga os passos abaixo para rodar a API na sua máquina:
 ## Endpoints Principais
 | Método | Endpoint    | Descrição                  |
 | ------ | ----------- | -------------------------- |
-| GET    | /loans      | Lista todos os empréstimos |
-| POST   | /loans      | Cria um novo empréstimo    |
-| GET    | /loans/{id} | Busca empréstimo por ID    |
+| POST   | /api/loan-calculator/calculate      | Gera um novo empréstimo    |
 Para a documentação completa, utilize o Swagger UI: http://localhost:8080/swagger-ui/index.html
 
 ## Estrutura de Cálculo
