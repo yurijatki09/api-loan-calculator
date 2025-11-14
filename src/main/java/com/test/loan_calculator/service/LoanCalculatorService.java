@@ -13,6 +13,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.test.loan_calculator.dtos.LoanRequestDTO;
@@ -29,8 +30,12 @@ public class LoanCalculatorService {
         this.validator = validator;
     }
 
-    private static final int DAYS_BASE = 360;
-    private static final int SCALE = 2;
+    @Value("${loan.config.days-base}")
+    private int DAYS_BASE;
+
+    @Value("${loan.config.scale}")
+    private int SCALE;
+
     private static final RoundingMode ROUNDING = RoundingMode.HALF_UP;
 
     public List<LoanResponseDTO> calculate(LoanRequestDTO loanRequest) {

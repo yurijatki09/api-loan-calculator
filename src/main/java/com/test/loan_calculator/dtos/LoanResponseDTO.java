@@ -3,6 +3,8 @@ package com.test.loan_calculator.dtos;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Builder;
 import lombok.Data;
 
@@ -10,6 +12,7 @@ import lombok.Data;
 @Builder
 public class LoanResponseDTO {
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate competenceDate;
     
     private BigDecimal loanValue;
